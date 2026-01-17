@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>霍格華茲語詞魔法試煉</title>
+    <style>
+        :root { --magic-gold: #ffcc00; --wizard-blue: #1a2a6c; --paper-bg: #f4e4bc; }
+        body { 
+            display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
+            margin: 0; font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
+            background-color: #111; color: #ffffff;
+        }
+        header { background: linear-gradient(to bottom, #2c3e50, #000); padding: 10px; text-align: center; border-bottom: 2px solid var(--magic-gold); }
+        h1 { margin: 0; font-size: 1.6rem; color: var(--magic-gold); text-shadow: 0 0 10px rgba(255,204,0,0.5); }
+        .instruction { margin: 5px 0 0; font-size: 0.9rem; color: #ccc; }
+        
+        #story-main { 
+            flex: 1; overflow-y: auto; padding: 25px; line-height: 2.2; 
+            font-size: 1.3rem; background: url('https://www.transparenttextures.com/patterns/dark-matter.png'), rgba(30,30,30,0.8);
+            margin: 15px; border: 1px solid #444; border-radius: 8px;
+        }
+        .drop-zone { 
+            border-bottom: 2px solid #ff4444; display: inline-block; min-width: 100px; 
+            text-align: center; line-height: 1.2; vertical-align: bottom;
+            cursor: pointer; color: var(--magic-gold); font-weight: bold;
+        }
+        .drop-zone:empty::before { content: "？"; color: #555; }
+        
+        footer { background: #222; padding: 12px; border-top: 2px solid var(--magic-gold); }
+        #word-bank { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 12px; }
+        .word-card { 
+            background: #e0e0e0; color: #111; padding: 6px 14px; border-radius: 4px; 
+            cursor: pointer; user-select: none; font-weight: bold; font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .word-card:hover { background: var(--magic-gold); transform: scale(1.1); }
+        .btn-group { display: flex; gap: 15px; justify-content: center; }
+        button { 
+            padding: 12px 25px; font-size: 1rem; border: none; border-radius: 20px; cursor: pointer; font-weight: bold;
+        }
+        .btn-check { background: #006400; color: white; box-shadow: 0 0 10px rgba(0,100,0,0.5); }
+        .btn-reset { background: #555; color: white; }
+        .correct { color: #00ff00 !important; text-shadow: 0 0 5px #000; }
+        .wrong { color: #ff0000 !important; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🪄 霍格華茲：語詞魔法試煉 🪄</h1>
+    <p class="instruction">點擊下方「魔法咒語」填入故事空格，完成試煉！</p>
+</header>
+
+<div id="story-main">
+    霍格華茲的課程從不輕鬆，尤其是海格的奇獸飼育學。海格常帶著學生觀察禁忌森林的邊緣，他總感嘆大自然的競爭極其殘酷，每一種魔法生物都在實踐<span class="drop-zone" data-ans="物競天擇"></span>的規律，唯有強悍者才能在幽暗的森林深處存活。這一天，哈利、妙麗與榮恩來到黑湖邊，練習在強勁的<span class="drop-zone" data-ans="逆風"></span>中操控飛天掃帚。狂風呼嘯，掃帚在空中劇烈晃動，讓飛行練習變得格外艱困，哈利的眼鏡甚至差點被吹落湖中。<br><br>
+    練習結束後，哈利在海格的小屋旁發現了一個模樣<span class="drop-zone" data-ans="可憐"></span>的家庭小精靈，正對著一地破碎的魔法瓶發愁。這隻小精靈名叫「皮皮」，他原本在活米村的魔法藥材店工作，但因為生性有些<span class="drop-zone" data-ans="好逸惡勞"></span>，總是在工作時偷懶打瞌睡，結果不小心撞倒了架子。這些玻璃瓶顯得十分<span class="drop-zone" data-ans="脆弱"></span>，禁不起一點碰撞就碎成了粉末。皮皮一邊發抖一邊抽泣，擔心會被主人嚴厲懲罰。<br><br>
+    妙麗決定幫忙。她拿出了一卷古老的地圖，仔細觀察霍格華茲地基下的魔力<span class="drop-zone" data-ans="脈絡"></span>，希望能找到修復魔法所需的能量源。接下來的一整天，一行人陷入了極度<span class="drop-zone" data-ans="忙碌"></span>的狀態。榮恩負責去溫室尋找稀有的藥粉，卻因為吸入了過多的「噴噴草」孢子，忍不住打了一個巨大的<span class="drop-zone" data-ans="噴嚏"></span>，響亮的聲音差點引來了巡邏的飛七。與此同時，妙麗則<span class="drop-zone" data-ans="興味盎然"></span>地翻閱著《古老咒語全書》，她對這種失傳的修復工藝充滿了好奇。他們還得小心避開那些愛管閒事的「<span class="drop-zone" data-ans="鄰居"></span>」——史萊哲林學生的窺探，以免計畫曝光。<br><br>
+    當月亮升到塔尖時，大家已經<span class="drop-zone" data-ans="精疲力盡"></span>，榮恩甚至累得直接躺在交誼廳的地毯上睡著了。然而，成果令人驚嘆。那幾個原本破碎的瓶子，在魔法的修復下呈現出極其<span class="drop-zone" data-ans="精緻"></span>的紋理，閃爍著宛如鑽石般的微光。皮皮感激涕零地帶著瓶子回去了，並發誓從此要勤奮工作。哈利看著窗外的城堡，明白即使擁有魔法，解決問題仍需要不懈的努力。
+</div>
+
+<footer>
+    <div id="word-bank"></div>
+    <div class="btn-group">
+        <button class="btn-check" onclick="checkResults()">🪄 檢查魔法結果</button>
+        <button class="btn-reset" onclick="resetGame()">🔄 重置試煉</button>
+    </div>
+</footer>
+
+<script>
+    const words = ["物競天擇", "逆風", "可憐", "脆弱", "好逸惡勞", "鄰居", "脈絡", "忙碌", "噴嚏", "興味盎然", "精疲力盡", "精緻"];
+    const wordBank = document.getElementById('word-bank');
+    const zones = document.querySelectorAll('.drop-zone');
+
+    function init() {
+        wordBank.innerHTML = '';
+        const shuffled = [...words].sort(() => Math.random() - 0.5);
+        shuffled.forEach(w => {
+            const div = document.createElement('div');
+            div.className = 'word-card';
+            div.innerText = w;
+            div.onclick = () => fillBlank(w);
+            wordBank.appendChild(div);
+        });
+    }
+
+    function fillBlank(word) {
+        for (let zone of zones) {
+            if (!zone.innerText) { zone.innerText = word; break; }
+        }
+    }
+
+    zones.forEach(zone => {
+        zone.onclick = () => {
+            zone.innerText = '';
+            zone.classList.remove('correct', 'wrong');
+        };
+    });
+
+    function checkResults() {
+        let allCorrect = true;
+        zones.forEach(zone => {
+            if (zone.innerText === zone.getAttribute('data-ans')) {
+                zone.classList.add('correct');
+                zone.classList.remove('wrong');
+            } else {
+                zone.classList.add('wrong');
+                allCorrect = false;
+            }
+        });
+        if (allCorrect) alert("梅林的鬍語啊！你完美的完成了挑戰！");
+    }
+
+    function resetGame() {
+        zones.forEach(zone => {
+            zone.innerText = '';
+            zone.classList.remove('correct', 'wrong');
+        });
+        init();
+    }
+
+    init();
+</script>
+</body>
+</html>
